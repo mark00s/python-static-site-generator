@@ -7,7 +7,7 @@ class LeafNode(HTMLNode):
 
     def to_html(self):
         if not self.value:
-            raise ValueError()
+            raise ValueError("Value value is missing in ParentNode")
         if not self.tag:
             return f"{self.value}"
         
@@ -16,3 +16,6 @@ class LeafNode(HTMLNode):
             props_html = self.props_to_html()
         
         return f'<{self.tag}{props_html}>{self.value}</{self.tag}>'
+
+    def __repr__(self):
+        return f"LeafNode({self.tag}, {self.value}, {self.props})"
