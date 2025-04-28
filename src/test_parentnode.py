@@ -3,6 +3,7 @@ import unittest
 from leafnode import LeafNode
 from parentnode import ParentNode
 
+
 class TestParentNode(unittest.TestCase):
     def test_to_html_many_children(self):
         node = ParentNode(
@@ -14,7 +15,10 @@ class TestParentNode(unittest.TestCase):
                 LeafNode(None, "Normal text"),
             ],
         )
-        self.assertEqual(node.to_html(),"<p><b>Bold text</b>Normal text<i>italic text</i>Normal text</p>")
+        self.assertEqual(
+            node.to_html(),
+            "<p><b>Bold text</b>Normal text<i>italic text</i>Normal text</p>",
+        )
 
     def test_to_html_with_children(self):
         child_node = LeafNode("span", "child")

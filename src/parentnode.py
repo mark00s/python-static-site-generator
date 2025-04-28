@@ -9,15 +9,14 @@ class ParentNode(HTMLNode):
     def to_html(self):
         if not self.tag:
             raise ValueError("Tag value is missing in ParentNode")
-        
+
         if not self.children:
             raise ValueError("Children value is missing in ParentNode")
-
 
         html = f"<{self.tag}>"
         if isinstance(self, LeafNode):
             return self.to_html()
-        
+
         for child in self.children:
             html += child.to_html()
 
