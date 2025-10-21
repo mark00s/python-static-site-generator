@@ -1,7 +1,7 @@
 [project]
 name = "python-static-site-generator"
 version = "0.1.0"
-description = "Markdown-based static site generator in Python"
+description = "Grug-brain static site generator in Python"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
